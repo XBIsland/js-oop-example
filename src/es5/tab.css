@@ -1,0 +1,65 @@
+.wrap {
+  width: 500px;
+  height: 500px;
+  /* background-color: aqua; */
+  margin: 0 auto;
+}
+
+.wrap .tab {
+  height: 50px;
+}
+
+.wrap .tab .item {
+  float: left;
+  width: 100px;
+  height: 100%;
+  text-align: center;
+  line-height: 50px;
+}
+
+.wrap .tab .item.current {
+  background-color: black;
+  color: white;
+}
+
+.wrap .page {
+  position: relative;
+  height: 450px;
+  border: 1px solid #000;
+  overflow: hidden;
+}
+
+.wrap .page .page-wrap {
+  height: 100%;
+}
+
+.wrap .page .page-wrap .item {
+  height: 100%;
+  line-height: 450px;
+  text-align: center;
+}
+
+.wrap .page .page-wrap.fade .item {
+  display: none;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.wrap .page .page-wrap.fade .item.active {
+  display: block;
+}
+
+.wrap .page .page-wrap.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1500px;
+}
+
+.wrap .page .page-wrap.slide .item {
+  float: left;
+  width: 500px;
+}
