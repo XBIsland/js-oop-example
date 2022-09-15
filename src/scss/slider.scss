@@ -42,24 +42,30 @@
   .car-wrapper {
     // position: relative;
     height: 100%;
+    overflow: hidden;
 
     .car-list {
       position: relative;
+      width: 5120px;
       height: 100%;
+      // transition: transform .5s;
 
       .car-item {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: opacity .5s;
-        z-index: 0;
+        // position: absolute;
+        // left: 0;
+        // top: 0;
+        float: left;
+        // width: 100%;
+        width: 640px;
+        height: 427px;
+        // opacity: 0;
+        // transition: opacity .5s;
+        // z-index: 0;
 
-        &.active {
-          opacity: 1;
-          z-index: 1
+        //  
+        img {
+          width: 640px;
+          height: 427px;
         }
       }
     }
