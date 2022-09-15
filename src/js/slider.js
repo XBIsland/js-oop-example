@@ -1,18 +1,15 @@
-class Slider {
+import { Carousel } from './carousel.js'
+
+class Slider extends Carousel {
   constructor($, options) {
-    const { dom, speed } = options
-    this.$dom = $(dom)
+    super($, options)
     this.oCarList = this.$dom.find('ul')
-    this.oCarItems = this.oCarList.children('li')
     this.carW = this.$dom.width()
-    this.oIndicators = this.$dom.find('i')
-    this.speed = speed
-    this.timer = null
-    this.curInx = 0
     this.init()
   }
 
   init() {
+    this.$dom.addClass('slider').removeClass('fade')
     this.cloneItem()
     this.autoPlay()
     this.bindEvent()
@@ -23,15 +20,15 @@ class Slider {
     this.oCarList.append(firstItem)
   }
 
-  bindEvent() {
-    this.$dom.on('mouseover', { event: 'in' }, $.proxy(this._mouseInOut, this))
-    this.$dom.on('mouseout', { event: 'out' }, $.proxy(this._mouseInOut, this))
-    this.$dom.on('click', $.proxy(this.carClick, this))
-  }
+  // bindEvent() {
+  //   this.$dom.on('mouseover', { event: 'in' }, $.proxy(this._mouseInOut, this))
+  //   this.$dom.on('mouseout', { event: 'out' }, $.proxy(this._mouseInOut, this))
+  //   this.$dom.on('click', $.proxy(this.carClick, this))
+  // }
 
-  autoPlay() {
-    this.timer = setInterval($.proxy(this.run, this), this.speed)
-  }
+  // autoPlay() {
+  //   this.timer = setInterval($.proxy(this.run, this), this.speed)
+  // }
 
   run() {
     this._slideAction('next')
@@ -113,19 +110,19 @@ class Slider {
       .removeClass('active')
   }
 
-  _mouseInOut(e) {
-    const event = e.data.event
-    switch (event) {
-      case 'in':
-        clearInterval(this.timer)
-        break
-      case 'out':
-        this.autoPlay()
-        break
-      default:
-        break
-    }
-  }
+  // _mouseInOut(e) {
+  //   const event = e.data.event
+  //   switch (event) {
+  //     case 'in':
+  //       clearInterval(this.timer)
+  //       break
+  //     case 'out':
+  //       this.autoPlay()
+  //       break
+  //     default:
+  //       break
+  //   }
+  // }
 
   // _setIndex() {
   //   switch (dir) {

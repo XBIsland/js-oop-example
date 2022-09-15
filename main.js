@@ -1,17 +1,15 @@
 // * 引入图标
 import './src/icons/iconfont.js'
-// import './src/scss/index.scss'
+import './src/scss/fade.scss'
 import './src/scss/slider.scss'
-// import { Carousel } from './src/js/carousel.js'
-import { Slider } from './src/js/slider.js'
+// import { Fade } from './src/js/fade'
+// import { Slider } from './src/js/slider.js'
+import { Carousel } from './src/js/index.js'
 
-// const carousel = new Carousel($, {
-//   dom: '.j-carousel',
-//   speed: 3000
-// })
-const slider = new Slider($, {
+const carousel = new Carousel($, {
+  mode: 'fade',
   dom: '.j-carousel',
   speed: 3000
 })
 
-console.log('carousel', slider)
+console.log('carousel', carousel)
